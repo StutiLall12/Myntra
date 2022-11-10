@@ -10,7 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_050405) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_044017) do
+  create_table "brands", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.integer "registration_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.integer "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "sub_category_id"
+    t.integer "brand_id"
+    t.text "description"
+    t.float "mrp"
+    t.float "discount_price"
+    t.float "discount_percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "product_id"
+    t.float "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "size_type"
+    t.integer "total_count"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_categories", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "category_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,6 +96,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_050405) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "wishlists", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
