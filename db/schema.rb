@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_09_044017) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_15_041554) do
   create_table "brands", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "registration_number"
@@ -61,6 +61,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_044017) do
     t.string "size_type"
     t.integer "total_count"
     t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "specifications", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "product_id"
+    t.string "fabric"
+    t.string "occasion"
+    t.string "print"
+    t.string "neck"
+    t.string "color"
+    t.string "wash_care"
+    t.string "material"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,5 +3,6 @@ class Product < ApplicationRecord
     belongs_to :brand
     has_many :ratings
     has_one :cart
+    has_one :specification
     has_one :wishlist
 end
