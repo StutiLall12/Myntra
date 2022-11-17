@@ -16,80 +16,32 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
 ></script>
- <nav class="navbar navbar-expand-lg bg-light">
+
+
+  <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> <img src="../../assets/K.jpeg"  width="30" height="24" class="d-inline-block align-text-top"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item dropdown">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+   
+    <%@sections.each do |section|%>  <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        MEN
+    
+    <%= section.name%>
       
       </a>
       <ul class="dropdown-menu">
-     <li style="color:pink"> <%= options_for_select(@cat)%></li></ul>
-      </li>
+      <%section.categories.each do |category|%> <li style="color:pink">  
+      <%=category.name%>
+      <%category.sub_categories.each do |sub_cat|%>
+      <p style="color:grey"><%=sub_cat.name%></p> 
+      </li>   
     
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          WOMEN
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Ethnic</a></li>
-          <li><a class="dropdown-item" href="#">Dresses</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Jeans</a></li>
-        </ul>
-      </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            KIDS
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
-            <li><a class="dropdown-item" href="#">Jeans</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Shirt</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          HOME & LIVING
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Bedsheet</a></li>
-          <li><a class="dropdown-item" href="#">Sofa Cover</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Carpet</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          BEAUTY
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Lipstick</a></li>
-          <li><a class="dropdown-item" href="#">Skin Care</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Liner</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        STUDIO<sup style="color:pink">NEW</sup>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Explore Studio</a></li>
-        <li><a class="dropdown-item" href="#">Men Studio</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Women Studio</a></li>
-      </ul>
-    </li>
-      </ul>
-      <form class="d-flex" role="search">
+      </ul>   <%end%><%end%>  <%end%> 
+   <form class="d-flex" role="search">
         <input class="form-control me-1" type="search" placeholder="Search for products,brands and more" aria-label="Search">
        
         
@@ -289,9 +241,7 @@
             <a href="#!" class="text-reset">Help</a>
           </p>
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
