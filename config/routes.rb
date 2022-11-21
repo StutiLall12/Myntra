@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
   resources :wishlists
   resources :products  
   resources :carts  
+  resources :specifications  
   # devise_for :users
   devise_for :users, controllers: {
         sessions: 'users/sessions'

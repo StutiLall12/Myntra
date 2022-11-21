@@ -1,0 +1,13 @@
+<div class="gallery">
+    <a target="_blank" href="#">
+      <img src="../../assets/pro.webp" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">
+      <ul>
+        <li>
+          <%=detail.description%>
+        </li>
+
+      </ul>
+   <%= link_to "More Details",  specifications_path(id:detail.id) ,class:"btn btn-primary" %></div>
+  </div>

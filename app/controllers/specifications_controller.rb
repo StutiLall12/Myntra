@@ -1,8 +1,7 @@
-class ProductsController < ApplicationController
+class SpecificationsController < ApplicationController
   def index
-  #  byebug
-    @pro=SubCategory.find_by_id(params[:id])
-    
+   
+    @detail=Product.find_by_id(params[:id])
   end
 
   def show
