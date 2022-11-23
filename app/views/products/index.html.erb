@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="product.css">
+
+<%= render :partial => 'nav' , locals: {detail: @sections} %>
+<div>
 <%@pro.products.each do |product|%>
   <%= render :partial => 'product_display' , locals: {detail: product} %>
 
 <%end%>
+</div>

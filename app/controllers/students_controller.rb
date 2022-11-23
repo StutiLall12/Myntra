@@ -1,8 +1,5 @@
-class ProductsController < ApplicationController
+class StudentsController < ApplicationController
   def index
-  #  byebug
-    @pro=SubCategory.find_by_id(params[:id])
-    @sections=Section.all
   end
 
   def show

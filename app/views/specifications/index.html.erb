@@ -1,6 +1,10 @@
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="spec.css">
 
+
+<%= render :partial => 'nav' , locals: {detail: @sections} %>
+ 
 <div class="container">
     <!-- product -->
     <div class="product-content product-wrap clearfix product-deatil">
@@ -51,16 +55,15 @@
                 </div>
                 <hr />
                 <div class="description description-tabs">
-                    <ul id="myTab" class="nav nav-pills">
-                        <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Product Description </a></li>
-                        <li class=""><a href="#specifications" data-toggle="tab">Specifications</a></li>
-                        <li class=""><a href="#reviews" data-toggle="tab">Reviews</a></li>
-                    </ul>
+                <section class="prod-desc"><h3 class="prod-heading">Product Details</h3><h2><ul class="prod-list"><li class="detail-list">Sleek &amp; classy aesthetic 
+                show off your classic taste in clothing by sporting this stylish jacket which is in a design of contrasting colours.</li><li class="detail-list">Keep warm
+                 &amp; cozy - wear this men's winter jacket to stay ultra-comfy during winter or when temperature falls down. The soft, sturdy and lightweight fabric helps keep your body warmth from escaping which effectively keeps you warm while enjoying the outdoors.</li><li class="detail-list">Practicality- A favourable front zipper extending the length of the jacket is featured along with 3 zipper hand pockets. The side entry and chest pockets create a spacious and easily accessible pocket.</li><li class="detail-list">Regular Fit</li><li class="detail-list">Package contains: 1 jacket</li><li class="detail-list">Machine wash warm</li><li class="detail-list">100% nylon</li><li class="detail-list"><span>Product Code: 469255924009</span></li><div class="other-info-toggle">
+                <span class="rilrtl-accordion-header__end-detail"><i class="ic-angle-down"></i></span></div></ul></h2></section>
                     <div id="myTabContent" class="tab-content">
                         <div id="more-information">
                             <br />
                             <table class="table caption-top">
-                            <caption>List of users</caption>
+                            <caption>Specifications</caption>
                             <thead>
                               <tr>
                                
@@ -84,24 +87,18 @@
                           </table>
                           </div>
                         </div>
-                        <div class="tab-pane fade" id="specifications">
+                        <div  id="specifications">
                             <br />
                             <dl class="">
-                                <dt>Gravina</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Eget lacinia odio sem nec elit.</dd>
-                                <br />
+                                <dt>Bank Offers</dt>
+                                <dd>Earn up to 10% AJIO Points and pay up to 5% using AJIO Points on orders for 1990 or above.</dd>
+                                <dd>Get upto Rs.500 cashback with minimum assured cashback of Rs.50 on a minimum transaction value of Rs 999 using Mobikwik Wallet
 
-                                <dt>Test lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <br />
-
-                                <dt>Altra porta</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper</dd>
+                                .</dd>
+                               
                             </dl>
                         </div>
-                        <div class="tab-pane fade" id="reviews">
+                        <div  id="reviews">
                             <br />
                             <form method="post" class="well padding-bottom-10" onsubmit="return false;">
                                 <textarea rows="2" class="form-control" placeholder="Write a review"></textarea>

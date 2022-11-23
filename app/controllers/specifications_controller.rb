@@ -1,6 +1,6 @@
 class SpecificationsController < ApplicationController
   def index
-   
+    @sections=Section.all
     @detail=Product.find_by_id(params[:id])
   end
 

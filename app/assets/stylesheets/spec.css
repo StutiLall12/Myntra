@@ -22,7 +22,9 @@ body{
     overflow: hidden;
     position: relative
 }
-
+.detail-list{
+ font-size: 15px;   
+}
 .product-content .product-deatil {
     border-bottom: 1px solid #dfe5e9;
     padding-bottom: 17px;
